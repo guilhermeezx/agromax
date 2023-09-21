@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- My CSS -->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/financeiro.css">
+	<title>Agromax</title>
+</head>
+<body>
+
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			
+			<img src="img/Logo.png" alt="logo" srcset="" class="logo">
+			<span class="text">Agromax</span>
+		</a>
+		<ul class="side-menu top">
+			<li>
+				<a href="index.html">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Principal</span>
+				</a>
+			</li>
+			<li class="active">
+				<a href="#">
+					
+					<i class='bx bx-chart' ></i>
+					<span class="text">Financeiro</span>
+				</a>
+			</li>
+			<li>
+				<a href="patrimonios.html">
+					
+					<i class='bx bx-building-house'></i>
+					<span class="text">Patrimônios</span>
+				</a>
+			</li>
+			<li>
+				<a href="animais.html">
+					
+					<i class='bx bx-book'></i>
+					<span class="text">Animais</span>
+				</a>
+			</li>
+			<li>
+				<a href="plantios.html">
+					
+					<i class='bx bx-map-alt'></i>
+					<span class="text">Plantios</span>
+				</a>
+			</li>
+			<li class="climatempo">
+				<a href="climatempo.html">
+					
+					<i class='bx bx-cloud-snow' ></i>
+					<span class="text">Clima tempo</span>
+				</a>
+			</li>
+			
+		</ul>
+		<ul class="side-menu">
+			<li>
+				<a href="#">
+					<i class='bx bxs-cog' ></i>
+					<span class="text">Ajustes</span>
+				</a>
+			</li>
+			<li>
+				<a href="#" class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Sair</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			
+			<form action="#">
+				<div class="form-input">
+					<input type="search" placeholder="Procurar...">
+					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+				</div>
+			</form>
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			<a href="#" class="notification">
+				<i class='bx bxs-bell' ></i>
+				<span class="num">8</span>
+			</a>
+			<a href="#" class="profile">
+				<img src="img/people.png">
+			</a>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>Financeiro</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a href="index.html">Home</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" href="#">Financeiro</a>
+						</li>
+					</ul>
+				</div>
+				<a href="#" class="btn-download">
+					<i class='bx bxs-cloud-download' ></i>
+					<span class="text">Download PDF</span>
+				</a>
+			</div>
+
+
+
+            <div class="finance">
+                <h3>Adicione agora</h3>
+                <div class="newItem">
+					
+                    <div class="divDesc">
+                      <label for="desc">Descrição</label>
+                      <input type="text" id="desc" />
+                    </div>
+                    <div class="divAmount">
+                      <label for="amount">Valor</label>
+                      <input type="number" id="amount" />
+                    </div>
+                    <div class="divType">
+                      <label for="type">Tipo</label>
+                      <select id="type">
+                        <option>Entrada</option>
+                        <option>Saída</option>
+                      </select>
+                    </div>
+					<div class="divType">
+						<label for="type">Categoria</label>
+						<select id="type">
+						  <option>Manutenção</option>
+						  <option>Insumos</option>
+						  <option>Ração</option>
+						  <option>Veículo</option>
+						  <option>Casa</option>
+						  <option>Salário</option>
+						  <option>Venda</option>
+						  <option>Outros</option>
+						</select>
+					  </div>
+                    <button id="btnNew">Incluir</button>
+                  </div>
+            </div>
+       
+            
+            <div class="list">
+                <div class="divTable">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Descrição</th>
+                          <th class="columnAmount">Valor</th>
+                          <th class="columnType">Tipo</th>
+                          <th class="columnAction"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      </tbody>
+                    </table>
+                </div>
+            </div>
+            
+
+
+
+			<ul class="box-info">
+
+                
+
+				<li>
+					<i class='bx bx-chart' ></i>
+					<span class="text">
+						<h3>R$<span class="incomes">0,00</span></h3>
+						<p>Receitas</p>
+					</span>
+				</li>
+				<li>
+					<i class='bx bx-line-chart-down' ></i>
+					<span class="text">
+						<h3>R$<span class="expenses">0,00</span> </h3>
+						<p>Despesas</p>
+					</span>
+				</li>
+				<li>
+					<i class='bx bx-bar-chart-square' ></i>
+					<span class="text">
+						<h3>R$<span class="total">0,00</span></h3>
+						<p>Valor total</p>
+					</span>
+					<script>
+						function receiveMessage(event) {
+							const { incomeValue, expenseValue, totalValue } = event.data;
+							
+							const incomesElement = document.querySelector(".incomes");
+							const expensesElement = document.querySelector(".expenses");
+							const totalElement = document.querySelector(".total");
+							
+							incomesElement.innerText = `R$ ${incomeValue}`;
+							expensesElement.innerText = `R$ ${expenseValue}`;
+							totalElement.innerText = `R$ ${totalValue}`;
+						}
+						
+						window.addEventListener("message", receiveMessage, false);
+					</script>
+					
+				</li>
+			</ul>
+
+			
+			
+
+			<div class="table-data">
+				<div class="order">
+					<div class="head">
+						<h3>Relatório</h3>
+						<i class='bx bx-search' ></i>
+						<i class='bx bx-filter' ></i>
+					</div>
+					<canvas id="myChart" style="width:100%"></canvas>
+
+					
+					<!-- <table>
+						<thead>
+							<tr>
+								<th>User</th>
+								<th>Date Order</th>
+								<th>Status</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<img src="img/people.png">
+									<p>John Doe</p>
+								</td>
+								<td>01-10-2021</td>
+								<td><span class="status completed">Completed</span></td>
+							</tr>
+							<tr>
+								<td>
+									<img src="img/people.png">
+									<p>John Doe</p>
+								</td>
+								<td>01-10-2021</td>
+								<td><span class="status pending">Pending</span></td>
+							</tr>
+							<tr>
+								<td>
+									<img src="img/people.png">
+									<p>John Doe</p>
+								</td>
+								<td>01-10-2021</td>
+								<td><span class="status process">Process</span></td>
+							</tr>
+							<tr>
+								<td>
+									<img src="img/people.png">
+									<p>John Doe</p>
+								</td>
+								<td>01-10-2021</td>
+								<td><span class="status pending">Pending</span></td>
+							</tr>
+							<tr>
+								<td>
+									<img src="img/people.png">
+									<p>John Doe</p>
+								</td>
+								<td>01-10-2021</td>
+								<td><span class="status completed">Completed</span></td>
+							</tr>
+						</tbody>
+					</table> -->
+				</div>
+				<!-- <div class="todo">
+					<div class="head">
+						<h3>Todos</h3>
+						<i class='bx bx-plus' ></i>
+						<i class='bx bx-filter' ></i>
+					</div>
+					<ul class="todo-list">
+						<li class="completed">
+							<p>Todo List</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="completed">
+							<p>Todo List</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="not-completed">
+							<p>Todo List</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="completed">
+							<p>Todo List</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="not-completed">
+							<p>Todo List</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+					</ul>
+				</div> -->
+			</div>
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- CONTENT -->
+	
+	<script
+src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+</script>
+	<script src="js/script.js"></script>
+	<script src="js/financeiro.js"></script>
+	<script src="js/adicionarFinanceiro.js"></script>
+</body>
+</html>

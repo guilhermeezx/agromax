@@ -1,0 +1,396 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #F9F9F9;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    margin-top: 4%;
+  }
+  
+  .title {
+    font-size: 28px;
+    color: #69B916;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+ 
+  
+  .message{
+    margin-bottom: 1rem;
+  }
+
+  .message, .signin {
+    color: rgba(0, 0, 0, 0.822);
+    font-size: 14px;
+  }
+  
+  .signin {
+    text-align: center;
+  }
+  
+  .signin a {
+    color: 69B916;
+  }
+  
+  .signin a:hover {
+    text-decoration: underline #69B916;
+  }
+  
+  .flex {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 6px;
+  }
+  
+  .form label {
+    position: relative;
+    margin-bottom: 1rem!important;
+  }
+  
+  .form label .input  {
+    width: 100%;
+    padding: 10px 10px 20px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+  }
+  
+  select{
+    width: 100%;
+    padding: 15px 60px 15px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+    color: grey;
+    font-size: 0.9em;
+  }
+  
+  .form label .input + span {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+  }
+  
+  .form label .input:placeholder-shown + span {
+    top: 15px;
+    font-size: 0.9em;
+  }
+  
+  .form label .input:focus + span,.form label .input:valid + span {
+    top: 30px;
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+
+  #revisao{
+    top: 30px !important;
+    font-size: 0.7em !important;
+    font-weight: 500 ;
+  }
+  
+  .form label .input:valid + span {
+    color: #69B916;
+  }
+  
+  .submit {
+    border: none;
+    outline: none;
+    background-color: #69B916;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    transform: .3s ease;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .submit:hover {
+    background-color: #69B916;
+  }
+  
+  @keyframes pulse {
+    from {
+      transform: scale(0.9);
+      opacity: 1;
+    }
+  
+    to {
+      transform: scale(1.8);
+      opacity: 0;
+    }
+  }
+
+  #erro{
+    display: none;
+  }
+
+  .botaoAdd{
+    border: none;
+    outline: none;
+    background-color: #69B916;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    transform: .3s ease;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+  }
+
+
+
+
+
+
+
+
+
+
+  #container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+}
+
+#titulo{
+    text-align: center;
+}
+
+hr.rounded {
+    width: 12%;
+    border-top: 8px solid #710096;
+    border-radius: 5px;
+    margin-top: -10px;
+    margin-bottom: 70px;
+  }
+/* 
+#tabelaPatrimonios{
+    margin-top: 20px;
+    width: 100%;
+}
+
+#subtitle{
+    font-weight: 600;
+    font-size: 20px;
+    padding-bottom: 10px;
+
+}
+
+.searchIcon{
+    size: 20px;
+    height: 22px;
+    margin-bottom: -5px;
+}
+
+.linhaPatrimonios{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    
+}
+
+.linhaPatrimonios:hover {
+	background: var(--grey);
+}
+.subhead:hover {
+	background: none;
+}
+.subhead{
+  border-bottom: 1px solid var(--grey);
+  padding-bottom: 14px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.icone{
+    height: 1.5rem;
+}
+
+.tipo{
+  height: 2rem;
+  padding-left: 6px;
+ 
+}
+
+.item{
+    width: 15%;
+}
+
+.imagemTipo{
+  width: 5% !important;
+}
+
+.descricao{
+  width: 40% !important;
+  max-width: 40% !important;
+} */
+
+#areaBotao{
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+
+
+
+
+.input-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.input {
+    min-height: 50px;
+    padding: 0 1rem;
+    color: #000000;
+    font-size: 15px;
+    border: 1px solid #69B916;
+    border-radius: 6px 0 0 6px;
+    background-color: transparent;
+}
+
+.button--submit {
+    min-height: 52px;
+    padding: .5em 1em;
+    border: none;
+    border-radius: 0 6px 6px 0;
+    background-color: #69B916;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color .3s ease-in-out;
+    margin-right: 20px;
+    margin-left: -8px;
+}
+
+.button--submit:hover {
+    background-color: #69B916;
+}
+
+.input:focus,
+.input:focus-visible {
+    border-color: #69B916;
+    outline: none;
+}
+
+.personalizada th,
+.personalizada td {
+    color: rgb(112, 112, 112);
+    background-color: transparent;
+    text-align: center;
+}
+
+.personalizada .table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgb(255, 255, 255);
+}
+
+.personalizada .table-striped tbody tr:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+.personalizada .table-striped tbody tr td:nth-last-child(2) button,
+.personalizada .table-striped tbody tr td:last-child button {
+    color: rgb(134, 134, 134);
+}
+
+
+#btnListarTodos{
+    color: #69B916;
+    background-color: #fff;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 15px;
+    border: 1px solid #69B916;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#botaoAdicionarPatrimonio{
+  background-color: #6bbb16;
+	color: white;
+	border: none;
+	padding: 0 60px;
+	border-radius: 12px;
+	cursor: pointer;
+	height: 56px;
+  width: 100%;
+	font-size: 16px;
+	font-weight: 600;
+	font-family: var(--poppins);
+	margin-bottom: 12px;
+  margin-top: 24px;
+}
+
+#divBotaoAddPatrimonio{
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid var(--grey);
+}
+
+.status, .process, .completed, .pending{
+  font-size: 10px;
+	padding: 6px 16px;
+	color: var(--light);
+	border-radius: 20px;
+	font-weight: 700;
+}
+
+.status.completed {
+	background: var(--blue);
+}
+.status.process {
+	background: var(--yellow);
+}
+.status.pending {
+	background: var(--orange);
+}
+
+
+#colImg{
+  display: none;
+}
+
+
+.lapis, .lixeira{
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 0 !important;
+  margin: 3px !important;
+}
+
+#backText{
+  font-size: 12px;
+  font-weight: 100;
+  color: --var(dark);
+}
+
+.backText{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

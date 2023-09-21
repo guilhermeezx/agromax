@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- My CSS -->
+	<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/climatempo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<title>Agromax</title>
+</head>
+<body>
+
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			
+			<img src="img/Logo.png" alt="logo" srcset="" class="logo">
+			<span class="text">Agromax</span>
+		</a>
+		<ul class="side-menu top">
+			<li>
+				<a href="index.html">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Principal</span>
+				</a>
+			</li>
+			<li >
+				<a href="financeiro.html">
+					
+					<i class='bx bx-chart' ></i>
+					<span class="text">Financeiro</span>
+				</a>
+			</li>
+			<li>
+				<a href="patrimonios.html">
+					
+					<i class='bx bx-building-house'></i>
+					<span class="text">Patrimônios</span>
+				</a>
+			</li>
+			<li>
+				<a href="animais.html">
+					
+					<i class='bx bx-book'></i>
+					<span class="text">Animais</span>
+				</a>
+			</li>
+			<li>
+				<a href="plantios.html">
+					
+					<i class='bx bx-map-alt'></i>
+					<span class="text">Plantios</span>
+				</a>
+			</li>
+			<li class="climatempo active">
+				<a href="climatempo.html">
+					
+					<i class='bx bx-cloud-snow' ></i>
+					<span class="text">Clima tempo</span>
+				</a>
+			</li>
+			
+		</ul>
+		<ul class="side-menu">
+			<li>
+				<a href="#">
+					<i class='bx bxs-cog' ></i>
+					<span class="text">Ajustes</span>
+				</a>
+			</li>
+			<li>
+				<a href="#" class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Sair</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			
+			<form action="#">
+				<div class="form-input">
+					<input type="search" placeholder="Procurar...">
+					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+				</div>
+			</form>
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			<a href="#" class="notification">
+				<i class='bx bxs-bell' ></i>
+				<span class="num">8</span>
+			</a>
+			<a href="#" class="profile">
+				<img src="img/people.png">
+			</a>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>Clima-tempo</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a href="index.html">Home</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" href="#">Clima-tempo</a>
+						</li>
+					</ul>
+				</div>
+				<a href="#" class="btn-download">
+					<i class='bx bxs-cloud-download' ></i>
+					<span class="text">Download PDF</span>
+				</a>
+			</div>
+
+            <div class="bg"></div>
+            <div class="conter">
+            <div class="container">
+                <div class="form">
+                  <h3>Confira o clima de uma cidade:</h3>
+                  <div class="form-input-container">
+                    <input
+                    type="text"
+                    placeholder="Digite o nome da cidade"
+                    id="city-input"
+                  />
+                  <button id="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </button>
+                  </div>
+                </div>
+                <div id="weather-data" class="hide">
+                  <h2><i class="fa-solid fa-location-dot"></i> <span id="city">Ibirama</span> <img id="country"></img></h2>
+                  <p id="temperature"><span>20</span>&deg;C</p>
+                  <div id="description-container">
+                    <p id="description">Clima limpo</p>
+                    <img id="weather-icon" src="http://openweathermap.org/img/wn/01d@2x.png" alt="Condições atuais">
+                  </div>
+                  <div id="details-container">
+                    <p id="umidity">
+                      <i class="fa-solid fa-droplet"></i> 
+                      <span class="infos">48%</span>
+                    </p>
+                    <p id="wind">
+                      <i class="fa-solid fa-wind"></i>
+                      <span class="infos">24km/h</span>
+                    </p>
+                  </div>
+                </div>
+                <div id="error-message" class="hide">
+                  <p>Não foi possível encontrar o clima de uma cidade com este nome.</p>
+                </div>
+                <div id="loader" class="hide">
+                  <i class="fa-solid fa-spinner"></i>
+                </div>
+                <div id="suggestions">
+                  <button id="ibirama">Ibirama</button>
+                  <button id="presidente getulio">Presidente Getúlio</button>
+                  <button id="rio do sul">Rio do Sul</button>
+                  <button id="dona emma">Dona Emma</button>
+                  <button id="jose boiteux">José Boiteux</button>
+                  <button id="witmarsum">Witmarsum</button>
+                 
+                </div>
+              </div>
+            </div>
+
+        
+			<div class="table-data">
+				<div class="order">
+					<div class="head">
+						<h3>Recomendações</h3>
+						<i class='bx bx-search' ></i>
+						<i class='bx bx-filter' ></i>
+					</div>
+					<table>
+						<thead>
+							<tr>
+								<th>Categoria</th>								
+								<th>Status</th>
+								<th>Riscos</th>
+								<th>Precauções</th>
+							</tr>
+						</thead>
+						<tbody id="tabelaLinhasTempo">
+							<!-- <tr id="safe">
+								<td class="imgCol">
+									<img src="img/animal.png">
+									<p>Animal</p>
+								</td>
+								<td><span class="status completed">Seguro</span></td>
+								<td class="colunaText">Sem nenhum risco corrente</td>
+								<td class="colunaText">Lembre-se de alimentar corretamente e fornecer água limpa aos animais</td>
+								
+							</tr>
+							<tr>
+								<td class="imgCol">
+									<img src="img/animal.png">
+									<p>Animal</p>
+								</td>
+								<td><span class="status process">Alerta</span></td>
+								<td class="colunaText">Temperatura baixa</td>
+								<td class="colunaText">Manter os animais em ambientes internos aquecidos</td>
+								
+							</tr>
+							<tr>
+								<td class="imgCol">
+									<img src="img/animal.png">
+									<p>Animal</p>
+								</td>
+								<td><span class="status process">Alerta</span></td>
+								<td class="colunaText">Temperatura alta</td>
+								<td class="colunaText">Manter os animais em ambientes frescos e ventilados</td>
+								
+							</tr>
+							<tr>
+								<td class="imgCol">
+									<img src="img/animal.png">
+									<p>Animal</p>
+								</td>
+								<td><span class="status process">Alerta</span></td>
+								<td class="colunaText">Umidade alta</td>
+								<td class="colunaText">Fornecer áreas cobertas, secas e protegidas da chuva</td>
+								
+							</tr>
+							<tr>
+								<td class="imgCol">
+									<img src="img/animal.png">
+									<p>Animal</p>
+								</td>
+								<td><span class="status process">Alerta</span></td>
+								<td class="colunaText">Umidade baixa</td>
+								<td class="colunaText">Fornecer áreas frescas, ventiladas e água limpa aos animais</td>
+								
+							</tr>
+
+
+							
+							<tr>
+								<td class="imgCol">
+									<img src="img/animal.png">
+									<p>Animal</p>
+								</td>
+								<td><span class="status pending">Risco</span></td>
+								<td class="colunaText">Temperatura muito baixa</td>
+								<td class="colunaText">Manter os animais em ambientes internos aquecidos</td>
+								
+							</tr>
+							<tr>
+								<td class="imgCol">
+									<img src="img/animal.png">
+									<p>Animal</p>
+								</td>
+								<td><span class="status pending">Risco</span></td>
+								<td class="colunaText">Temperatura muito alta</td>
+								<td class="colunaText">Manter os animais em ambientes frescos e ventilados</td>
+								
+							</tr>
+							<tr>
+								<td class="imgCol">
+									<img src="img/animal.png">
+									<p>Animal</p>
+								</td>
+								<td><span class="status pending">Risco</span></td>
+								<td class="colunaText">Umidade muito alta</td>
+								<td class="colunaText">Fornecer áreas cobertas, secas e protegidas da chuva</td>
+								
+							</tr>
+							<tr>
+								<td class="imgCol">
+									<img src="img/animal.png">
+									<p>Animal</p>
+								</td>
+								<td><span class="status pending">Risco</span></td>
+								<td class="colunaText">Umidade muito baixa</td>
+								<td class="colunaText">Fornecer áreas frescas, ventiladas e água limpa aos animais</td>
+								
+							</tr> -->
+
+
+							
+						</tbody>
+					</table>
+				</div>
+				
+			</div>
+       
+            
+				
+			</div>
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- CONTENT -->
+	
+	<script
+src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+</script>
+	<script src="js/script.js"></script>
+    <script src="js/climatempo.js"></script>
+    
+	
+</body>
+</html>
