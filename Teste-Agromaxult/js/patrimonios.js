@@ -49,8 +49,8 @@ function criarLinhaPatrimonios(patrimonio){
             <td>${patrimonio.valor}</td>
             <td>${patrimonio.tipo}</td>
             <td>${estadoRevisao}</td>
-            <td><img class="icone lapis" data-id="${patrimonio.id}" data-estado="${patrimonio.estado}" data-revisao="${dataFormatada}" src="../img/lapis.png" alt="icone lápis"></td>
-            <td><img class="icone lixeira" data-id="${patrimonio.id}" src="../img/lixeira.png" alt="icone lixeira"></td>
+            <td><img class="icone lapis" data-id="${patrimonio.id}" data-estado="${patrimonio.estado}" data-revisao="${dataFormatada}" src="img/lapis.png" alt="icone lápis"></td>
+            <td><img class="icone lixeira" data-id="${patrimonio.id}" src="img/lixeira.png" alt="icone lixeira"></td>
         </tr>`;
 }
 
