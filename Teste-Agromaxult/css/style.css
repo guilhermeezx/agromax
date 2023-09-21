@@ -183,7 +183,7 @@ body {
 
 .finance, .list{
 	margin-top: 48px;
-	background-color: #F9F9F9;
+	background-color: var(--light);
 	border-radius: 20px;
 	padding: 24px;
 	
