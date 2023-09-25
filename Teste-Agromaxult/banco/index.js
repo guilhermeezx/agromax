@@ -139,3 +139,86 @@ app.put("/patrimonios/:id",jsonParser, function(req,res){
     
   });
 
+
+
+
+
+
+  //FINANCEIRO
+  // Criando uma finança
+app.post("/financeiro/", jsonParser, function(req, res){
+    var sql = "INSERT into financeiro(descricao, valor, tipo, categoria) values(?,?,?,?);"
+    var values = [req.body.descricao, req.body.valor, req.body.tipo, req.body.categoria]
+    console.log(">>>>>");
+    con.query(sql, values, function(err, result){
+        if (err) throw err;
+        const novaFinanca = {
+            id: result.insertId,
+            descricao: req.body.descricao,
+            valor: req.body.valor,
+            tipo: req.body.tipo,
+            categoria: req.body.categoria
+        }
+        res.send(novaFinanca);
+    });
+});
+
+// Obter todas as finanças
+app.get("/financeiro/", function(req, res){
+    var sql = "SELECT * FROM financeiro;"
+    con.query(sql, function(err, result, fields){
+        if(err) throw err;
+        console.log(result);
+        res.send(result);
+    });
+});
+
+// Obter uma finança por ID
+app.get("/financeiro/:id", function(req, res){
+    var sql = "SELECT * FROM financeiro WHERE id = ?;"
+    var values = [req.params.id]
+    con.query(sql, values, function(err, result){
+        if(err) throw err;
+        console.log(result);
+        if(result.length == 0){
+            res.status(404).send({});
+        } else {
+            res.send(result);
+        }
+    });
+});
+
+// Atualizar uma finança por ID
+app.put("/financeiro/:id", jsonParser, function(req, res){
+    var sql = "UPDATE financeiro SET descricao = ?, valor = ?, tipo = ?, categoria = ? WHERE id = ?";
+    var values = [req.body.descricao, req.body.valor, req.body.tipo, req.body.categoria, req.params.id];
+    con.query(sql, values, function(err, result){
+        if (err) throw err;
+        if (result.affectedRows == 0) {
+            res.status(404).send({});
+        } else {
+            const financaAtualizada = {
+                id: req.params.id,
+                descricao: req.body.descFinanca,
+                valor: req.body.valorFinanca,
+                tipo: req.body.tipoFinanca,
+                categoria: req.body.categoriaFinanca
+            };
+            res.send(financaAtualizada);
+        }
+    });
+});
+
+// Excluir uma finança por ID
+app.delete("/financeiro/:id", jsonParser, function(req, res){
+    var sql = "DELETE FROM financeiro WHERE id = ?";
+    var values = [req.params.id]
+    con.query(sql, values, function(err, result){
+        if (err) throw err;
+        if (result.affectedRows == 0) {
+            res.status(404).send({});
+        } else {
+            res.status(204).send({});
+        }
+    });
+});
