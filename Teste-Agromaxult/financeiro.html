@@ -9,6 +9,7 @@
 	<!-- My CSS -->
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/financeiro.css">
+	<link rel="stylesheet" href="css/patrimonios.css">
 	<title>Agromax</title>
 </head>
 <body>
@@ -131,7 +132,98 @@
 
 
 
-            <div class="finance">
+			<form class="form">
+				<p class="title">Registre</p>
+				<p class="message">Adicione seu fluxo de caixa abaixo. </p>
+					
+						
+				<label>
+					<input id="campoDescricao" placeholder="" type="text" class="input">
+					<span>Descrição</span>
+				</label> 
+					
+			
+
+                <label>
+                    <input id="campoValor" required="" placeholder="" type="number" class="input">
+                    <span>Valor</span>
+                </label>
+        
+
+                <label>
+                    <select id="campoTipo" required class="input">
+                        <option value="" disabled selected></option>
+                        <option value="entrada">Entrada</option>
+                        <option value="saida">Saída</option>
+                    </select>
+                    <span class="input-label">Tipo</span>
+                </label>
+
+
+                <label>
+                    <select id="campoCategoria" required class="input">
+                        <option value="" disabled selected></option>
+                        <option value="manutencao">Manutenção</option>
+						<option value="insumos">Insumos</option>
+						<option value="racao">Ração</option>
+						<option value="veiculo">Veículo</option>
+						<option value="casa">Casa</option>
+						<option value="salario">Salário</option>
+						<option value="venda">Venda</option>
+						<option value="outros">Outros</option>
+                    </select>
+                    <span class="input-label">Categoria</span>
+                </label>
+
+               
+
+				<div class="flex">
+					
+				</div>  
+
+				<button id="botaoAdicionar" class="botaoAdd">Registrar finança</button>
+                
+                
+			
+				
+			</form>
+
+
+
+			<div class="table-data">
+				<div class="order">
+					<div class="head">
+						<h3>Finanças</h3>
+						<i class='bx bx-plus' ></i>
+						<i class='bx bx-filter' ></i>
+					</div>
+					<table>
+						<thead>
+							<tr>
+								<th>Nome</th>
+								<th>Valor</th>
+								<th>Tipo</th>
+								<th>Categoria</th>
+								<th>Editar</th>
+								<th>Excluir</th>
+							</tr>
+						</thead>
+						<tbody id="listaFinancas">
+							
+						</tbody>
+
+
+						<div id="tabelaFinancas" class="personalizada"></div>
+					</table>
+					
+				</div>
+			</div>
+
+
+
+
+
+            <!-- <div class="finance">
                 <h3>Adicione agora</h3>
                 <div class="newItem">
 					
@@ -165,25 +257,10 @@
 					  </div>
                     <button id="btnNew">Incluir</button>
                   </div>
-            </div>
+            </div> -->
        
             
-            <div class="list">
-                <div class="divTable">
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>Descrição</th>
-                          <th class="columnAmount">Valor</th>
-                          <th class="columnType">Tipo</th>
-                          <th class="columnAction"></th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                      </tbody>
-                    </table>
-                </div>
-            </div>
+           
             
 
 
@@ -212,21 +289,7 @@
 						<h3>R$<span class="total">0,00</span></h3>
 						<p>Valor total</p>
 					</span>
-					<script>
-						function receiveMessage(event) {
-							const { incomeValue, expenseValue, totalValue } = event.data;
-							
-							const incomesElement = document.querySelector(".incomes");
-							const expensesElement = document.querySelector(".expenses");
-							const totalElement = document.querySelector(".total");
-							
-							incomesElement.innerText = `R$ ${incomeValue}`;
-							expensesElement.innerText = `R$ ${expenseValue}`;
-							totalElement.innerText = `R$ ${totalValue}`;
-						}
-						
-						window.addEventListener("message", receiveMessage, false);
-					</script>
+					
 					
 				</li>
 			</ul>
@@ -243,6 +306,7 @@
 					</div>
 					<canvas id="myChart" style="width:100%"></canvas>
 
+					
 					
 					<!-- <table>
 						<thead>
@@ -326,6 +390,29 @@
 					</ul>
 				</div> -->
 			</div>
+
+
+			<ul class="box-info">
+				<li><div class="chart-container">
+					<canvas id="pieChart"></canvas>
+					<div id="resumo">
+						<p>Receitas: <span id="porcentagemReceitas"></span></p>
+						<p>Despesas: <span id="porcentagemDespesas"></span></p>
+					  </div>
+				  </div>
+				</li>
+				<li>
+					<div class="chart-container">
+						<canvas id="categoriasReceitas"></canvas>
+					  </div>
+				</li>
+				<li>
+					<div class="chart-container">
+						<canvas id="categoriasDespesas"></canvas>
+					  </div>
+				</li>
+			</ul>
+			
 		</main>
 		<!-- MAIN -->
 	</section>
