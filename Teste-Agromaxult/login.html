@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!-- Coding by CodingNepal | www.codingnepalweb.com-->
+<html lang="pt0br">
+  <head>
+    <meta charset="UTF-8">
+    <title> Login and Signup | Agromax </title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <input type="checkbox" id="flip">
+    <div class="cover">
+      <div class="front">
+        <img src="img/Image.png" alt="">
+        <div class="text">
+          <!-- <span class="text-1">Every new friend is a <br> new adventure</span>
+          <span class="text-2">Let's get connected</span> -->
+        </div>
+      </div>
+      <div class="back">
+        <img src="img/Image (1).png" alt="">
+        <div class="text">
+          <!-- <span class="text-1">Complete miles of journey <br> with one step</span>
+          <span class="text-2">Let's get started</span> -->
+        </div>
+      </div>
+    </div>
+    <div class="forms">
+        <div class="form-content">
+          <div class="login-form">
+            <div class="title">Login</div>
+          <form id="loginForm">
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="text" id="campoEmail" name="email" placeholder="Seu email" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="campoSenha" name="senha" placeholder="Sua senha" required>
+              </div>
+              <div class="text"><a href="#">Esqueceu a senha?</a></div>
+              <div class="button input-box">
+                <input type="submit" id="botaoEntrar" value="Entrar">
+              </div>
+              <div class="text sign-up-text">Não possui uma conta? <label for="flip">Inscrever agora</label></div>
+            </div>
+        </form>
+      </div>
+        <div class="signup-form">
+          <div class="title">Inscrever</div>
+        <form id="formSign">
+            <div class="input-boxes">
+              
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="text" placeholder="Seu email" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Sua senha" required>
+              </div>
+              <div class="button input-box">
+                <input type="submit" value="Criar conta">
+              </div>
+              <div class="text sign-up-text">Já possui uma conta? <label for="flip">Fazer login</label></div>
+            </div>
+      </form>
+    </div>
+    </div>
+    </div>
+  </div>
+
+  <script>
+    function validarEmail(email) {
+            // Expressão regular para verificar se o email é válido
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function validarSenha(senha) {
+            // Verifica se a senha tem pelo menos 6 caracteres
+            return senha.length >= 1;
+        }
+</script>
+<script src="js/login.js"></script>
+  <script src="js/script.js"></script>
+  
+</body>
+</html>

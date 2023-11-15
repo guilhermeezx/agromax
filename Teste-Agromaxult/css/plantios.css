@@ -85,3 +85,9 @@ button.close span{
     font-size: 32px;
     
 }
+
+
+
+.hide {
+    display: none !important;
+}

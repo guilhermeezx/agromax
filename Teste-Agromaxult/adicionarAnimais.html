@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animais.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.6/inputmask.min.js"></script>
+    <title>Agromax</title>
+</head>
+<body>
+    <section id="sidebar">
+        <a href="#" class="brand">
+            <img src="img/Logo.png" alt="logo" srcset="" class="logo">
+            <span class="text">Agromax</span>
+        </a>
+        <ul class="side-menu top">
+            <li>
+                <a href="index.html">
+                    <i class='bx bxs-dashboard' ></i>
+                    <span class="text">Principal</span>
+                </a>
+            </li>
+            <li>
+                <a href="financeiro.html">
+                    <i class='bx bx-chart' ></i>
+                    <span class="text">Financeiro</span>
+                </a>
+            </li>
+            <li>
+                <a href="patrimonios.html">
+                    <i class='bx bx-building-house'></i>
+                    <span class="text">Patrimônios</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="animais.html">
+                    <i class='bx bx-book'></i>
+                    <span class="text">Animais</span>
+                </a>
+            </li>
+            <li>
+                <a href="plantios.html">
+                    <i class='bx bx-map-alt'></i>
+                    <span class="text">Plantios</span>
+                </a>
+            </li>
+            <li class="climatempo">
+                <a href="climatempo.html">
+                    <i class='bx bx-cloud-snow' ></i>
+                    <span class="text">Clima tempo</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="side-menu">
+            <li>
+                <a href="#">
+                    <i class='bx bxs-cog' ></i>
+                    <span class="text">Ajustes</span>
+                </a>
+            </li>
+            <li>
+                <a href="login.html" class="logout">
+                    <i class='bx bxs-log-out-circle' ></i>
+                    <span class="text">Sair</span>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <section id="content">
+        <nav>
+            <i class='bx bx-menu' ></i>
+            <form action="#">
+                <div class="form-input">
+                    <input type="search" placeholder="Procurar...">
+                    <button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+                </div>
+            </form>
+            <input type="checkbox" id="switch-mode" hidden>
+            <label for="switch-mode" class="switch-mode"></label>
+            <a href="#" class="notification">
+                <i class='bx bxs-bell' ></i>
+                <span class="num">8</span>
+            </a>
+            <a href="#" class="profile">
+                <img src="img/people.png">
+            </a>
+        </nav>
+        <main>
+            <div class="head-title">
+                <div class="left">
+                    <h1>Animais</h1>
+                    <ul class="breadcrumb">
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li><i class='bx bx-chevron-right' ></i></li>
+                        <li>
+                            <a class="active" href="animais.html">Animais</a>
+                        </li>
+                        <li><i class='bx bx-chevron-right' ></i></li>
+                        <li>
+                            <a class="active" href="#">Adicionar</a>
+                        </li>
+                    </ul>
+                </div>
+                <a href="#" class="btn-download">
+                    <i class='bx bxs-cloud-download' ></i>
+                    <span class="text">Download PDF</span>
+                </a>
+            </div>
+            <form class="form">
+                <p class="title">Registre</p>
+                <p class="message">Adicione seus animais abaixo.</p>
+                <label>
+                    <input id="campoNome" placeholder="" type="text" class="input">
+                    <span>Nome</span>
+                </label>
+                <label>
+                    <select id="campoEspecie" required class="input">
+                        <option value="" disabled selected></option>
+                        <option value="vaca">Vaca</option>
+                        <option value="cavalo">Cavalo</option>
+                        <option value="galinha">Galinha</option>
+                        <option value="porco">Porco</option>
+                        <option value="cão">Cão</option>
+                        <option value="gato">Gato</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                    <span class="input-label">Espécie</span>
+                </label>
+                <label>
+                    <input id="campoRaca" required class="input" type="text">
+                    <span class="input-label">Raça</span>
+                </label>
+                <label>
+                    <input id="campoNascimento" required class="input date-input" type="text" placeholder="">
+                    <span class="input-label">Data de Nascimento</span>
+                </label>
+                <label>
+                    <select id="campoSexo" required class="input">
+                        <option value="" disabled selected></option>
+                        <option value="macho">Macho</option>
+                        <option value="fêmea">Fêmea</option>
+                    </select>
+                    <span class="input-label">Sexo</span>
+                </label>
+                <button id="botaoAdicionarAnimais" class="botaoAdd">Registrar animal</button>
+                <div class="backText"><p id="backText"><a href="animais.html"><u>Voltar para tela anterior</u></a></p></div>
+            </form>
+            <div id="erro"><h1>erro</h1></div>
+        </main>
+    </section>
+    <script src="js/script.js"></script>
+    <script src="js/adicionarAnimais.js"></script>
+</body>
+</html>

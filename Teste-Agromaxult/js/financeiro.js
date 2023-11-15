@@ -391,4 +391,6 @@ function calcularBalanço() {
   incomesElement.innerText = `${totalReceitas.toFixed(2)}`;
   expensesElement.innerText = `${totalDespesas.toFixed(2)}`;
   totalElement.innerText = `${balancoTotal.toFixed(2)}`;
+  
 }
+
