@@ -726,3 +726,34 @@ body {
 	margin-bottom: 1rem;
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.goal, .limit {
+    margin: 20px;
+}
+
+.progress {
+    margin: 20px;
+}
+
+.progress-bar {
+    height: 30px;
+    margin: 5px 0;
+}
+
+.status-message {
+    margin: 20px;
+    font-weight: bold;
+}

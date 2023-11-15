@@ -1,5 +1,6 @@
 
 
+
 const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li a');
 
 allSideMenu.forEach(item=> {
@@ -176,3 +177,15 @@ const setItensBD = () =>
   localStorage.setItem("db_items", JSON.stringify(items));
 
 loadItens();
+
+
+
+
+
+
+
+
+
+
+
+

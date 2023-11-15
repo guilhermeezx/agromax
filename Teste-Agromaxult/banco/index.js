@@ -29,6 +29,9 @@ app.use(function (req, res, next) {
     next();
   });
 
+
+
+//PATRIMÔNIOS
 // Criando um patrimonio
 app.post("/patrimonios/", jsonParser, function(req,res){
     var sql = "INSERT into patrimonios(descricao, valor, tipo, revisao, estado) values(?,?,?,?,?);"
@@ -219,6 +222,129 @@ app.delete("/financeiro/:id", jsonParser, function(req, res){
             res.status(404).send({});
         } else {
             res.status(204).send({});
+        }
+    });
+});
+
+
+
+
+
+//ANIMAIS
+// Criando um animal
+app.post("/animais/", jsonParser, function(req, res){
+    var sql = "INSERT INTO animais(nome, especie, raca, nascimento, sexo) VALUES (?, ?, ?, ?, ?);"
+    var values = [req.body.nome, req.body.especie, req.body.raca, req.body.nascimento, req.body.sexo]
+    con.query(sql, values, function(err, result){
+        if (err) throw err;
+        const novoAnimal = {
+            id: result.insertId,
+            nome: req.body.nome,
+            especie: req.body.especie,
+            raca: req.body.raca,
+            nascimento: req.body.nascimento,
+            sexo: req.body.sexo
+        }
+        res.send(novoAnimal);
+    });
+});
+
+// Get para ler todos os animais
+app.get("/animais/", function (req, res){
+    var sql = "SELECT * FROM animais;"
+    con.query(sql, function(err, result, fields){
+        if(err) throw err;
+        console.log(result);
+        res.send(result);
+    });
+});
+
+// Get para ler um animal por Id
+app.get("/animais/:id", function(req, res){
+    var sql = "SELECT * FROM animais WHERE id = ?;"
+    var values = [req.params.id]
+    con.query(sql, values, function(err, result){
+        if(err) throw err;
+        console.log(result);
+        if(result.length == 0){
+            res.status(404).send({});
+        } else {
+            res.send(result);
+        }
+    });
+});
+
+// Get para ler filtrado por espécie
+app.get("/animais/especie/:especie", function(req, res){
+    var sql = "SELECT * FROM animais WHERE especie = ?;"
+    var values = [req.params.especie]
+    con.query(sql, values, function(err, result){
+        if(err) throw err;
+        console.log(result);
+        if(result.length == 0){
+            res.status(404).send({});
+        } else {
+            res.send(result);
+        }
+    });
+});
+
+app.put("/animais/:id", jsonParser, function(req, res){
+    var sql = "UPDATE animais SET nome = ?, especie = ?, raca = ?, nascimento = ?, sexo = ? WHERE id = ?";
+    var values = [req.body.nome, req.body.especie, req.body.raca, req.body.nascimento, req.body.sexo, req.params.id]
+    con.query(sql, values, function(err, result) {
+        if (err) throw err;
+        if(result.affectedRows == 0){
+            res.status(404).send({});
+        } else {
+            const novoAnimal = {
+                id: req.params.id,
+                nome: req.body.nome,
+                especie: req.body.especie,
+                raca: req.body.raca,
+                nascimento: req.body.nascimento,
+                sexo: req.body.sexo
+            };
+            res.send(novoAnimal);
+        }
+    });
+});
+
+app.delete("/animais/:id", jsonParser, function(req, res){
+    var sql = "DELETE FROM animais WHERE id = ?";
+    var values = [req.params.id]
+    con.query(sql, values, function(err, result) {
+        if (err) throw err;
+        if(result.affectedRows == 0){
+            res.status(404).send({});
+        } else {
+            res.status(204).send({});
+        }
+    });
+});
+
+
+
+
+
+app.post("/login/", jsonParser, function (req, res) {
+    const email = req.body.email;
+    const senha = req.body.senha; 
+    var sql = "SELECT * FROM usuarios WHERE email = ?";
+    var values = [email];
+
+    con.query(sql, values, function (err, result) {
+        if (err) throw err;
+
+        if (result.length > 0) {
+            const usuario = result[0];
+            if (senha === usuario.senha) {
+                res.json({ message: "Login bem-sucedido", usuario });
+            } else {
+                res.status(401).json({ message: "Senha incorreta" });
+            }
+        } else {
+            res.status(401).json({ message: "Email não cadastrado" });
         }
     });
 });
