@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <!-- Coding by CodingNepal | www.codingnepalweb.com-->
 <html lang="pt0br">
-  <head>
-    <meta charset="UTF-8">
-    <title> Login and Signup | Agromax </title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Fontawesome CDN Link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="css/login.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   </head>
+
+<head>
+  <meta charset="UTF-8">
+  <title> Login and Signup | Agromax </title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Fontawesome CDN Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="css/login.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
 <body>
   <div class="container">
     <input type="checkbox" id="flip">
@@ -30,10 +32,10 @@
       </div>
     </div>
     <div class="forms">
-        <div class="form-content">
-          <div class="login-form">
-            <div class="title">Login</div>
-          <form id="loginForm">
+      <div class="form-content">
+        <div class="login-form">
+          <div class="title">Login</div>
+          <!-- <form id="loginForm"> -->
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
@@ -49,46 +51,47 @@
               </div>
               <div class="text sign-up-text">Não possui uma conta? <label for="flip">Inscrever agora</label></div>
             </div>
-        </form>
-      </div>
+          <!-- </form> -->
+        </div>
         <div class="signup-form">
           <div class="title">Inscrever</div>
-        <form id="formSign">
-            <div class="input-boxes">
-              
-              <div class="input-box">
-                <i class="fas fa-envelope"></i>
-                <input type="text" placeholder="Seu email" required>
-              </div>
-              <div class="input-box">
-                <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Sua senha" required>
-              </div>
-              <div class="button input-box">
-                <input type="submit" value="Criar conta">
-              </div>
-              <div class="text sign-up-text">Já possui uma conta? <label for="flip">Fazer login</label></div>
+          <!-- <form id="formSign"> -->
+          <div class="input-boxes">
+            <div class="input-box">
+              <i class="fas fa-envelope"></i>
+              <input id="campoEmail2" type="text" placeholder="Seu email" required>
             </div>
-      </form>
-    </div>
-    </div>
+            <div class="input-box">
+              <i class="fas fa-lock"></i>
+              <input id="campoSenha2" type="password" placeholder="Sua senha" required>
+            </div>
+            <div class="button input-box">
+              <input id="botaoFoda" type="submit" value="Criar conta">
+            </div>
+            <div class="text sign-up-text">Já possui uma conta? <label for="flip">Fazer login</label></div>
+          </div>
+          <!-- </form> -->
+        </div>
+      </div>
     </div>
   </div>
 
   <script>
     function validarEmail(email) {
-            // Expressão regular para verificar se o email é válido
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailRegex.test(email);
-        }
+      // Expressão regular para verificar se o email é válido
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
 
-        function validarSenha(senha) {
-            // Verifica se a senha tem pelo menos 6 caracteres
-            return senha.length >= 1;
-        }
-</script>
-<script src="js/login.js"></script>
+    function validarSenha(senha) {
+      // Verifica se a senha tem pelo menos 6 caracteres
+      return senha.length >= 1;
+    }
+  </script>
+  <script src="js/loginUsuario.js"></script>
+  <script src="js/cadastroUsuario.js"></script>
   <script src="js/script.js"></script>
-  
+
 </body>
+
 </html>
